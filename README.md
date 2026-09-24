@@ -4,6 +4,8 @@ A Next.js starter for interactive maps with MapLibre GL JS, deck.gl, TypeScript,
 Zustand, shadcn/ui, and resizable layouts. The working example loads H3 cells from
 Parquet into Apache Arrow and filters synthetic annual values on the GPU.
 
+![](/frontend/public/images/globe_sample.png)
+
 ## Run locally
 
 Requires Node.js 22.12+ and pnpm (the pinned version is in package.json).
