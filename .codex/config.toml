@@ -1,0 +1,8 @@
+# Project defaults; role-specific model/effort is defined in agents/*.toml.
+[agents]
+default_subagent_model = "gpt-5.6-terra"
+default_subagent_reasoning_effort = "medium"
+
+# AGENTS.md and .agents/skills own this repository's workflow.
+[plugins."superpowers@openai-curated-remote"]
+enabled = false

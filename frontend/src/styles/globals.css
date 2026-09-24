@@ -1,0 +1,509 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+
+  /* must be rgb or rgba values! */
+  --main: 255, 255, 255;
+  --main-transparent: rgba(255, 255, 255, 0.5);
+  --main-weak: 142, 155, 167;
+  /* --main-medium: 214, 219, 227; */
+  --main-medium: 235, 240, 245;
+  /* --contrast: 1, 7, 11; */
+  --contrast: 2, 10, 15;
+  --dark: 2, 10, 15;
+  --primary-color: 255, 105, 180;
+  --secondary-color: 38, 155, 155;
+  /* --secondary-color: 99, 123, 255; */
+  --tertiary-color: 255, 160, 0;
+  /* --tertiary-color: 255, 149, 56; */
+  --quaternary-color: 59, 112, 212;
+  --destructive-color: 253, 62, 56;
+  --warning-color: 255, 160, 0;
+  --success-color: 38, 155, 155;
+  --info-color: 59, 112, 212;
+  --dot-space: 11px 11px;
+  --red-color: 253, 62, 56;
+  --blue-color: 59, 112, 212;
+  --yellow-color: 255, 160, 0;
+  --green-color: 38, 155, 155;
+  --purple-color: 129, 66, 255;
+  --orange-color: 255, 149, 56;
+  --pink-color: 255, 105, 180;
+
+
+  /* Shadcn styles */
+  --bf-pos: -12px 0px;
+  --radius: 0.625rem;
+  --background: rgb(var(--main));
+  --foreground: rgb(var(--contrast));
+  --card: rgb(var(--main-medium));
+  --card-foreground: rgb(var(--contrast));
+  --popover: rgb(var(--main));
+  --popover-foreground: rgb(var(--contrast));
+  --muted: rgb(var(--main-weak), 0.4);
+  --muted-foreground: rgb(var(--main-weak), 0.7);
+  --accent: rgba(var(--main-medium), 1);
+  --accent-foreground: rgb(var(--contrast));
+  --border: rgba(var(--main-weak), 0.3);
+  --input: rgba(var(--main-weak), 0.5);
+  --ring: rgb(var(--main-weak));
+  --chart-1: rgb(var(--primary-color));
+  --chart-2: rgb(var(--secondary-color));
+  --chart-3: rgb(var(--tertiary-color));
+  --chart-4: rgb(var(--quaternary-color));
+  --chart-5: rgb(var(--contrast));
+  --chart-6: rgb(var(--purple-color));
+  --chart-7: rgb(var(--orange-color));
+  --chart-8: rgb(var(--pink-color));
+  --sidebar: rgb(var(--main));
+  --sidebar-foreground: rgb(var(--contrast));
+  --sidebar-primary: rgb(var(--contrast));
+  --sidebar-primary-foreground: rgb(var(--main));
+  --sidebar-accent: rgba(var(--main-medium), 1);
+  --sidebar-accent-foreground: rgb(var(--contrast));
+  --sidebar-border: rgb(var(--main-weak));
+  --sidebar-ring: rgb(var(--main-weak));
+}
+
+@theme {
+
+  /* Blur */
+  --blur-xs: 1px;
+
+  /* Breakpoints (media queries) */
+  --breakpoint-sm: 420px;
+  --breakpoint-md: 768px;
+  --breakpoint-mdd: 870px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+    /* Colors (mapped to bg-*, text-*, etc) */
+  --color-main: rgb(var(--main));
+  --color-mainMedium: rgb(var(--main-medium));
+  --color-mainWeak: rgb(var(--main-weak));
+  --color-contrast: rgb(var(--contrast));
+  --color-dark: rgb(var(--dark));
+  --color-primary: rgb(var(--primary-color));
+  --color-primaryForeground: rgb(var(--contrast));
+  --color-primaryLight: rgb(var(--primary-color-light));
+  --color-secondary: rgb(var(--secondary-color));
+  --color-secondary-foreground: #ffffff;
+  --color-tertiary: rgb(var(--tertiary-color));
+  --color-quaternary: rgb(var(--quaternary-color));
+  --color-destructive: rgb(var(--destructive-color));
+  --color-warning: rgb(var(--warning-color));
+  --color-success: rgb(var(--success-color));
+  --color-info: rgb(var(--info-color));
+  --color-red: rgb(var(--red-color));
+  --color-blue: rgb(var(--blue-color));
+  --color-yellow: rgb(var(--yellow-color));
+  --color-green: rgb(var(--green-color));
+  --color-purple: rgb(var(--purple-color));
+  --color-orange: rgb(var(--orange-color));
+  --color-pink: rgb(var(--pink-color));
+  --globe-atmosphere: var(--color-secondary);
+  --globe-stars-opacity: 0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+[data-theme="dark"] {
+  --globe-atmosphere: #fff;
+  --globe-stars-opacity: 1;
+  /* must be rgb or rgba values! */
+  /* --main: 1, 7, 11; */
+  --main: 2, 10, 15;
+  --main-transparent: rgba(1, 7, 11, 0.5);
+  --main-weak: 141, 153, 166;
+  --main-medium: 17, 23, 27;
+  --contrast: 255, 255, 255;
+  --secondary-color: 38, 155, 155;
+  /* --tertiary-color: 255, 235, 12; */
+  --tertiary-color: 255, 212, 0;
+  --quaternary-color: 59, 112, 212
+  --destructive-color: 253, 62, 56;
+  --warning-color: 255, 212, 0;
+  --success-color: 38, 155, 155;
+  --info-color: 59, 112, 212;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+
+/*utilities for dynamic viewport height units (dvh, lvh, svh)*/
+@utility h-dvh {
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
+  @supports not (height: 100dvh) {
+    height: 100vh;
+  }
+}
+
+@utility h-lvh {
+  @supports (height: 100lvh) {
+    height: 100lvh;
+  }
+  @supports not (height: 100lvh) {
+    height: 100vh;
+  }
+}
+
+@utility h-svh {
+  @supports (height: 100svh) {
+    height: 100svh;
+  }
+  @supports not (height: 100svh) {
+    height: 100vh;
+  }
+}
+
+
+/* transition for all colors on theme change */
+.transitioner {
+  @apply transition-colors duration-500;
+}
+
+
+
+.bg-pattern {
+  @apply bg-accent;
+  background-image: radial-gradient(
+    rgba(var(--background), 0.7) 0.4px,
+    transparent 10%
+  );
+  background-size: var(--dot-space);
+  /* background-position: var(--bg-pos); */
+}
+
+.bg-globe{
+  background-image: url("/images/globe_sample.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* Input elements */
+[contenteditable]:empty::before {
+  content: attr(data-placeholder);
+  @apply text-input pointer-events-auto;
+}
+
+[contenteditable] a {
+  @apply text-secondary;
+  @apply hover:text-secondary/80;
+  @apply cursor-pointer;
+  @apply underline;
+}
+
+
+
+
+/* --- MapLibre controls and elements ---
+   The imported styles used main/mainMedium/mainWeak/contrast/dark. Use this
+   project's background/muted/accent/foreground tokens so both themes work. */
+.map-controlbox {
+  pointer-events: none;
+}
+
+/* React controls include direct buttons, not only MapLibre's nested divs. */
+.map-controlbox div,
+.map-controlbox > button {
+  pointer-events: auto;
+}
+
+.maplibregl-ctrl-top-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative !important;
+  margin: 0 !important;
+}
+
+.maplibregl-ctrl-top-right .maplibregl-ctrl {
+  border: none;
+  background-color: var(--background) !important;
+  right: auto !important;
+  top: auto !important;
+}
+
+.maplibregl-ctrl-group:not(:empty) {
+  @apply shadow-sm!;
+}
+
+.maplibregl-ctrl-group {
+  @apply rounded-sm! w-8 m-0! overflow-hidden!;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.maplibregl-ctrl-group button {
+  @apply w-full! h-7! p-1!;
+  border-color: var(--muted) !important;
+}
+
+.maplibregl-ctrl-group button:hover {
+  background-color: var(--muted) !important;
+}
+
+.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon,
+.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon {
+  background-color: var(--foreground) !important;
+  background-image: none !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E") no-repeat center / contain !important;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E") no-repeat center / contain !important;
+}
+
+.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon {
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E") no-repeat center / contain !important;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E") no-repeat center / contain !important;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 12px !important;
+  background-color: var(--background) !important;
+}
+
+.maplibregl-ctrl-attrib-inner,
+.maplibregl-ctrl-attrib a {
+  color: var(--foreground) !important;
+}
+
+.maplibregl-ctrl-scale {
+  @apply absolute -bottom-1 left-25;
+  background-color: var(--background);
+  color: var(--foreground);
+  border-color: var(--foreground);
+}
+
+.maplibregl-ctrl-fps {
+  position: absolute;
+  /* The original -280 was missing its CSS unit. */
+  bottom: -280px !important;
+  right: 50px !important;
+  margin: 0 !important;
+  @apply !bg-main !backdrop-blur-sm !text-secondary;
+  /* Contained by the map's stacking context, beneath the project UI. */
+  z-index: 900 !important;
+}
+
+.maplibregl-compare {
+  background-color: var(--muted) !important;
+}
+
+.maplibregl-compare .compare-swiper-vertical {
+  @apply !bg-dark;
+  @apply hover:!bg-secondary;
+  @apply text-contrast;
+  cursor: grab !important;
+  @apply rounded-lg!;
+  width: 30px !important;
+  left: -15px !important;
+  box-shadow: none !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 35px !important;
+  /* The upstream SVG is always white. Use a mask so arrows contrast in both themes. */
+  background-image: none !important;
+}
+
+.maplibregl-compare .compare-swiper-vertical::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M25 24 16 30 25 36ZM35 24V36L44 30Z'/%3E%3C/svg%3E") no-repeat center / 35px;
+  pointer-events: none;
+}
+
+.maplibregl-popup-content {
+  background-color: var(--background) !important;
+  color: var(--foreground);
+  @apply p-0! rounded-lg!;
+}
+
+.maplibregl-popup-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--muted) !important;
+  color: var(--foreground);
+  @apply p-2! rounded-bl-lg!;
+}
+
+.maplibregl-popup-close-button:hover {
+  background-color: var(--accent) !important;
+}
+
+.maplibregl-popup-tip {
+  display: none !important;
+}
+
+/* Globe atmosphere follows the canvas alpha silhouette, including zoom and pitch.
+   Filter its wrapper so the WebGL canvas remains an unfiltered compositing surface.
+   Deck layers and HTML controls are siblings and stay crisp. */
+.map-scene {
+  background-color: var(--background);
+}
+
+.map-scene[data-projection="globe"] .maplibregl-canvas-container {
+  filter:
+    drop-shadow(0 0 8px color-mix(in srgb, var(--globe-atmosphere) 55%, transparent))
+    drop-shadow(0 0 28px color-mix(in srgb, var(--globe-atmosphere) 30%, transparent));
+}
+
+/* Split view uses a separate globe silhouette: filtering either WebGL canvas
+   causes persistent tile/label duplication in some Opera compositor setups. */
+.map-scene[data-split-atmosphere] .maplibregl-canvas-container {
+  filter: none;
+}
+
+.map-split-atmosphere {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  color: var(--globe-atmosphere);
+}
+
+/* Fixed random positions avoid hydration differences and keep stars from jumping.
+   This backdrop is behind both comparison maps; opaque globe pixels hide it. */
+.map-scene[data-projection="globe"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--globe-stars-opacity);
+  background-image:
+    radial-gradient(circle at 92.24% 79.53%, rgb(255 255 255 / 0.32) 0 1.01px, transparent 1.61px),
+    radial-gradient(circle at 39.02% 65.94%, rgb(255 255 255 / 0.30) 0 0.53px, transparent 1.13px),
+    radial-gradient(circle at 46.30% 76.31%, rgb(255 255 255 / 0.47) 0 0.56px, transparent 1.16px),
+    radial-gradient(circle at 1.51% 9.02%, rgb(255 255 255 / 0.48) 0 0.68px, transparent 1.28px),
+    radial-gradient(circle at 89.73% 47.06%, rgb(255 255 255 / 0.62) 0 0.52px, transparent 1.12px),
+    radial-gradient(circle at 69.86% 11.88%, rgb(255 255 255 / 0.54) 0 0.86px, transparent 1.46px),
+    radial-gradient(circle at 71.19% 15.48%, rgb(255 255 255 / 0.59) 0 0.79px, transparent 1.39px),
+    radial-gradient(circle at 91.25% 28.37%, rgb(255 255 255 / 0.76) 0 0.75px, transparent 1.35px),
+    radial-gradient(circle at 28.93% 97.95%, rgb(255 255 255 / 0.76) 0 0.63px, transparent 1.23px),
+    radial-gradient(circle at 4.03% 80.96%, rgb(255 255 255 / 0.58) 0 1.02px, transparent 1.62px),
+    radial-gradient(circle at 27.03% 3.77%, rgb(255 255 255 / 0.67) 0 0.76px, transparent 1.36px),
+    radial-gradient(circle at 21.54% 33.89%, rgb(255 255 255 / 0.84) 0 1.12px, transparent 1.72px),
+    radial-gradient(circle at 68.47% 88.39%, rgb(255 255 255 / 0.47) 0 1.02px, transparent 1.62px),
+    radial-gradient(circle at 10.92% 67.53%, rgb(255 255 255 / 0.84) 0 0.71px, transparent 1.31px),
+    radial-gradient(circle at 40.94% 5.95%, rgb(255 255 255 / 0.55) 0 0.98px, transparent 1.58px),
+    radial-gradient(circle at 86.79% 8.24%, rgb(255 255 255 / 0.49) 0 0.69px, transparent 1.29px),
+    radial-gradient(circle at 40.16% 23.42%, rgb(255 255 255 / 0.40) 0 0.62px, transparent 1.22px),
+    radial-gradient(circle at 60.49% 8.44%, rgb(255 255 255 / 0.34) 0 0.79px, transparent 1.39px),
+    radial-gradient(circle at 22.00% 27.89%, rgb(255 255 255 / 0.51) 0 0.82px, transparent 1.42px),
+    radial-gradient(circle at 92.44% 37.63%, rgb(255 255 255 / 0.72) 0 0.86px, transparent 1.46px),
+    radial-gradient(circle at 50.39% 49.75%, rgb(255 255 255 / 0.61) 0 1.10px, transparent 1.70px),
+    radial-gradient(circle at 5.23% 42.08%, rgb(255 255 255 / 0.32) 0 0.73px, transparent 1.33px),
+    radial-gradient(circle at 58.71% 63.99%, rgb(255 255 255 / 0.54) 0 0.65px, transparent 1.25px),
+    radial-gradient(circle at 6.55% 24.91%, rgb(255 255 255 / 0.66) 0 0.88px, transparent 1.48px),
+    radial-gradient(circle at 77.12% 10.25%, rgb(255 255 255 / 0.51) 0 0.65px, transparent 1.25px),
+    radial-gradient(circle at 10.53% 28.73%, rgb(255 255 255 / 0.36) 0 0.62px, transparent 1.22px),
+    radial-gradient(circle at 86.30% 1.73%, rgb(255 255 255 / 0.72) 0 0.76px, transparent 1.36px),
+    radial-gradient(circle at 93.10% 89.86%, rgb(255 255 255 / 0.80) 0 0.66px, transparent 1.26px),
+    radial-gradient(circle at 70.60% 21.31%, rgb(255 255 255 / 0.45) 0 0.78px, transparent 1.38px),
+    radial-gradient(circle at 58.31% 7.02%, rgb(255 255 255 / 0.45) 0 1.15px, transparent 1.75px),
+    radial-gradient(circle at 58.84% 12.92%, rgb(255 255 255 / 0.69) 0 1.00px, transparent 1.60px),
+    radial-gradient(circle at 1.64% 50.34%, rgb(255 255 255 / 0.64) 0 0.81px, transparent 1.41px),
+    radial-gradient(circle at 86.80% 60.84%, rgb(255 255 255 / 0.68) 0 0.61px, transparent 1.21px),
+    radial-gradient(circle at 6.96% 81.10%, rgb(255 255 255 / 0.69) 0 0.72px, transparent 1.32px),
+    radial-gradient(circle at 60.32% 8.82%, rgb(255 255 255 / 0.58) 0 1.03px, transparent 1.63px),
+    radial-gradient(circle at 3.06% 88.10%, rgb(255 255 255 / 0.33) 0 0.58px, transparent 1.18px),
+    radial-gradient(circle at 83.52% 91.73%, rgb(255 255 255 / 0.36) 0 1.13px, transparent 1.73px),
+    radial-gradient(circle at 91.23% 47.12%, rgb(255 255 255 / 0.78) 0 1.10px, transparent 1.70px),
+    radial-gradient(circle at 26.61% 26.90%, rgb(255 255 255 / 0.57) 0 1.08px, transparent 1.68px),
+    radial-gradient(circle at 92.81% 34.67%, rgb(255 255 255 / 0.50) 0 1.17px, transparent 1.77px),
+    radial-gradient(circle at 19.04% 15.94%, rgb(255 255 255 / 0.54) 0 0.64px, transparent 1.24px),
+    radial-gradient(circle at 50.50% 20.33%, rgb(255 255 255 / 0.74) 0 0.83px, transparent 1.43px),
+    radial-gradient(circle at 75.54% 8.64%, rgb(255 255 255 / 0.68) 0 0.50px, transparent 1.10px),
+    radial-gradient(circle at 86.04% 21.61%, rgb(255 255 255 / 0.39) 0 1.06px, transparent 1.66px),
+    radial-gradient(circle at 75.70% 73.51%, rgb(255 255 255 / 0.82) 0 0.58px, transparent 1.18px),
+    radial-gradient(circle at 36.94% 8.44%, rgb(255 255 255 / 0.53) 0 1.11px, transparent 1.71px),
+    radial-gradient(circle at 69.17% 52.73%, rgb(255 255 255 / 0.40) 0 0.84px, transparent 1.44px),
+    radial-gradient(circle at 97.23% 3.44%, rgb(255 255 255 / 0.64) 0 0.51px, transparent 1.11px),
+    radial-gradient(circle at 38.62% 90.45%, rgb(255 255 255 / 0.30) 0 0.69px, transparent 1.29px),
+    radial-gradient(circle at 40.96% 91.30%, rgb(255 255 255 / 0.65) 0 1.07px, transparent 1.67px),
+    radial-gradient(circle at 74.32% 92.48%, rgb(255 255 255 / 0.75) 0 0.94px, transparent 1.54px),
+    radial-gradient(circle at 93.20% 15.92%, rgb(255 255 255 / 0.64) 0 0.96px, transparent 1.56px),
+    radial-gradient(circle at 42.39% 51.72%, rgb(255 255 255 / 0.64) 0 1.10px, transparent 1.70px),
+    radial-gradient(circle at 86.16% 33.20%, rgb(255 255 255 / 0.73) 0 0.84px, transparent 1.44px),
+    radial-gradient(circle at 16.08% 84.46%, rgb(255 255 255 / 0.47) 0 0.91px, transparent 1.51px),
+    radial-gradient(circle at 51.18% 41.13%, rgb(255 255 255 / 0.31) 0 0.80px, transparent 1.40px),
+    radial-gradient(circle at 22.41% 81.66%, rgb(255 255 255 / 0.56) 0 0.98px, transparent 1.58px),
+    radial-gradient(circle at 67.83% 30.16%, rgb(255 255 255 / 0.50) 0 0.72px, transparent 1.32px),
+    radial-gradient(circle at 32.23% 78.34%, rgb(255 255 255 / 0.40) 0 0.67px, transparent 1.27px),
+    radial-gradient(circle at 9.58% 27.86%, rgb(255 255 255 / 0.69) 0 0.61px, transparent 1.21px),
+    radial-gradient(circle at 95.06% 12.25%, rgb(255 255 255 / 0.63) 0 0.62px, transparent 1.22px),
+    radial-gradient(circle at 57.00% 77.03%, rgb(255 255 255 / 0.31) 0 1.05px, transparent 1.65px),
+    radial-gradient(circle at 60.67% 84.97%, rgb(255 255 255 / 0.65) 0 0.72px, transparent 1.32px),
+    radial-gradient(circle at 46.29% 28.01%, rgb(255 255 255 / 0.72) 0 0.70px, transparent 1.30px),
+    radial-gradient(circle at 57.70% 62.22%, rgb(255 255 255 / 0.66) 0 0.51px, transparent 1.11px),
+    radial-gradient(circle at 93.42% 56.05%, rgb(255 255 255 / 0.33) 0 0.95px, transparent 1.55px),
+    radial-gradient(circle at 95.06% 30.06%, rgb(255 255 255 / 0.55) 0 0.72px, transparent 1.32px),
+    radial-gradient(circle at 61.05% 60.64%, rgb(255 255 255 / 0.55) 0 0.56px, transparent 1.16px),
+    radial-gradient(circle at 28.57% 57.52%, rgb(255 255 255 / 0.59) 0 0.77px, transparent 1.37px),
+    radial-gradient(circle at 72.57% 64.99%, rgb(255 255 255 / 0.67) 0 0.60px, transparent 1.20px),
+    radial-gradient(circle at 21.77% 55.02%, rgb(255 255 255 / 0.56) 0 0.85px, transparent 1.45px),
+    radial-gradient(circle at 49.03% 37.68%, rgb(255 255 255 / 0.31) 0 0.97px, transparent 1.57px);
+}

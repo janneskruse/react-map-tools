@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(BD_BACKEND=sqlite bd create --type=epic --title=\"MVP Core\" 2>&1)",
+      "Bash(bd create:*)",
+      "Bash(psql:*)"
+    ]
+  }
+}

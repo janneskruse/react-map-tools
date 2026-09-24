@@ -1,0 +1,22 @@
+{
+  "name": "react-map-tools",
+  "version": "1.0.0",
+  "description": "A Next.js starter for interactive MapLibre and deck.gl maps with resizable layouts and Arrow data.",
+  "scripts": {
+    "dev": "pnpm --dir frontend dev",
+    "build": "pnpm --dir frontend build",
+    "start": "pnpm --dir frontend start",
+    "lint": "pnpm --dir frontend lint",
+    "typecheck": "pnpm --dir frontend typecheck",
+    "test": "pnpm --dir frontend test",
+    "beads": "bd"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@beads/bd": "^1.3.0"
+  },
+  "private": true,
+  "packageManager": "pnpm@12.5.1"
+}
